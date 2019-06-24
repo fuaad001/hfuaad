@@ -1,0 +1,349 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+
+
+<!-- topbar -->
+
+<nav class="topnav btm">
+    <ul>
+    <li class="one">
+      <i class="fab fa-angular mr-3"></i>Angular
+    </li>
+    <li class="two">
+      <i class="fas fa-database mr-3"></i>Collaborations</li>
+    <li class="three">
+      <i class="fab fa-python mr-3"></i>Django</li>
+    <li class="four">
+      <i class="fas fa-pepper-hot fa-flip-horizontal mr-3"></i>Flask</li>
+    <li class="five">
+      <i class="fab fa-js mr-3"></i>Javascript</li>
+    </ul>
+</nav>
+
+<!--Section: Cards-->
+<section class="pt-5">
+  <div class="container-fluid">
+
+    <!-- Heading & Description -->
+    <div class="wow fadeIn row">
+      <div class="col-md-2 sidenav">
+        <!-- Sidebar -->
+        <div class="py-5 my-5">
+
+          <ul class="list-group list-group-flush">
+            <li href="" class="list-group-item list-group-item-action waves-effect" id="one">
+              <i class="fab fa-angular fa-5x mr-3"></i>Angular
+            </li>
+            <li href="" class="list-group-item list-group-item-action waves-effect" id="two">
+              <i class="fas fa-database fa-5x mr-3"></i>Group</li>
+            <li href="" class="list-group-item list-group-item-action waves-effect" id="three">
+              <i class="fab fa-python fa-5x mr-3"></i>Django</li>
+            <li href="" class="list-group-item list-group-item-action waves-effect" id="four">
+              <i class="fas fa-pepper-hot fa-5x fa-flip-horizontal mr-3"></i>Flask</li>
+            <li href="" class="list-group-item list-group-item-action waves-effect" id="five">
+              <i class="fab fa-js fa-5x mr-3"></i>Javascript</li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="col-md-10 hiden ally">
+        <h2 class="h1 text-center tp">All Projects</h2>
+        <hr>
+        <div class="row proj">
+          {% if works %}
+          {% for work in works %}
+          <!--Grid column-->
+              <div class="col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <div class="">
+                      <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                    </div>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">{{work.title}}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{work.description}}</p>
+                    <p class="card-text">
+                      Technologies: <strong>{{work.technologies}}</strong>
+                    </p>
+                  </div>
+
+                  <div class="card-footer">
+                    <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                        <i class="fab fa-github ml-2"></i>
+                    </a>
+                    <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                        <i class="fas fa-globe ml-2"></i>
+                    </a>
+                  </div>
+
+                </div>
+                <!--/.Card-->
+
+              </div>
+              <!--Grid column-->
+              {% endfor %}
+              {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-10 hiden  angular">
+          <h2 class="h1 text-center tp">Angular Projects</h2>
+          <hr>
+          <div class="row proj">
+            {% if angular %}
+            {% for work in angular %}
+            <!--Grid column-->
+                <div class="col-md-6 mb-4">
+
+                  <!--Card-->
+                  <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                      <div class="">
+                        <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                      </div>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title">{{work.title}}</h4>
+                      <!--Text-->
+                      <p class="card-text">{{work.description}}</p>
+                      <p class="card-text">
+                        Technologies: <strong>{{work.technologies}}</strong>
+                      </p>
+                    </div>
+
+                    <div class="card-footer">
+                      <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                          <i class="fab fa-github ml-2"></i>
+                      </a>
+                      <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                          <i class="fas fa-globe ml-2"></i>
+                      </a>
+                    </div>
+
+                  </div>
+                  <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+                {% endfor %}
+                {% endif %}
+              </div>
+          </div>
+
+          <div class="col-md-10 hiden collaborations">
+            <h2 class="h1 text-center tp">Collaborated Projects</h2>
+            <hr>
+            <div class="row proj">
+              {% if collaborations %}
+              {% for work in collaborations %}
+              <!--Grid column-->
+                  <div class="col-md-6 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                      <!--Card image-->
+                      <div class="view overlay">
+                        <div class="">
+                          <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                        </div>
+                      </div>
+
+                      <!--Card content-->
+                      <div class="card-body">
+                        <!--Title-->
+                        <h4 class="card-title">{{work.title}}</h4>
+                        <!--Text-->
+                        <p class="card-text">{{work.description}}</p>
+                        <p class="card-text">
+                          Technologies: <strong>{{work.technologies}}</strong>
+                        </p>
+                      </div>
+
+                      <div class="card-footer">
+                        <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                            <i class="fab fa-github ml-2"></i>
+                        </a>
+                        <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                            <i class="fas fa-globe ml-2"></i>
+                        </a>
+                      </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                  </div>
+                  <!--Grid column-->
+                  {% endfor %}
+                  {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-10 hiden django">
+              <h2 class="h1 text-center tp">Django Projects</h2>
+              <hr>
+              <div class="row proj">
+                {% if django %}
+                {% for work in django %}
+                <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                      <!--Card-->
+                      <div class="card">
+
+                        <!--Card image-->
+                        <div class="view overlay">
+                          <div class="">
+                            <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                          </div>
+                        </div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+                          <!--Title-->
+                          <h4 class="card-title">{{work.title}}</h4>
+                          <!--Text-->
+                          <p class="card-text">{{work.description}}</p>
+                          <p class="card-text">
+                            Technologies: <strong>{{work.technologies}}</strong>
+                          </p>
+                        </div>
+
+                        <div class="card-footer">
+                          <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                              <i class="fab fa-github ml-2"></i>
+                          </a>
+                          <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                              <i class="fas fa-globe ml-2"></i>
+                          </a>
+                        </div>
+
+                      </div>
+                      <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+                    {% endfor %}
+                    {% endif %}
+                  </div>
+              </div>
+
+              <div class="col-md-10 hiden flask">
+                <h2 class="h1 text-center tp">Flask Projects</h2>
+                <hr>
+                <div class="row proj">
+                  {% if flask %}
+                  {% for work in flask %}
+                  <!--Grid column-->
+                      <div class="col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                          <!--Card image-->
+                          <div class="view overlay">
+                            <div class="">
+                              <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                            </div>
+                          </div>
+
+                          <!--Card content-->
+                          <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">{{work.title}}</h4>
+                            <!--Text-->
+                            <p class="card-text">{{work.description}}</p>
+                            <p class="card-text">
+                              Technologies: <strong>{{work.technologies}}</strong>
+                            </p>
+                          </div>
+
+                          <div class="card-footer">
+                            <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                                <i class="fab fa-github ml-2"></i>
+                            </a>
+                            <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                                <i class="fas fa-globe ml-2"></i>
+                            </a>
+                          </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                      </div>
+                      <!--Grid column-->
+                      {% endfor %}
+                      {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-10 hiden javascript">
+                  <h2 class="h1 text-center tp">Javascript Projects</h2>
+                  <hr>
+                  <div class="row proj">
+                    {% if javascript %}
+                    {% for work in javascript %}
+                    <!--Grid column-->
+                        <div class="col-md-6 mb-4">
+
+                          <!--Card-->
+                          <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                              <div class="">
+                                <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                              </div>
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+                              <!--Title-->
+                              <h4 class="card-title">{{work.title}}</h4>
+                              <!--Text-->
+                              <p class="card-text">{{work.description}}</p>
+                              <p class="card-text">
+                                Technologies: <strong>{{work.technologies}}</strong>
+                              </p>
+                            </div>
+
+                            <div class="card-footer">
+                              <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                                  <i class="fab fa-github ml-2"></i>
+                              </a>
+                              <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                                  <i class="fas fa-globe ml-2"></i>
+                              </a>
+                            </div>
+
+                          </div>
+                          <!--/.Card-->
+
+                        </div>
+                        <!--Grid column-->
+                        {% endfor %}
+                        {% endif %}
+                      </div>
+                  </div>
+    </div>
+
+  </div>
+</section>
+
+{%endblock%}

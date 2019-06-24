@@ -1,0 +1,131 @@
+/* Required height of parents of the Full Page Carousel for proper displaying carousel itself */
+html,
+body,
+.view {
+  height: 100%; }
+
+/* Full Page Carousel itself*/
+.carousel {
+  height: 100%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.top-nav-collapse {
+  background-color: #1C2331; }
+
+  .fa-angular{
+    color: #b22222;
+  }
+  .fa-js{
+    color: yellow;
+  }
+  .fa-css3-alt{
+    color: #74ccf4;
+  }
+  .fa-database{
+    color: grey;
+  }
+  .fa-star{
+    color: orange;
+  }
+  .fa-python{
+    color: pink;
+  }
+  .fa-java{
+    color: #74ccf4;
+  }
+  .fa-pepper-hot{
+    color: black;
+  }
+  .topnav{
+    display: none;
+  }
+
+  .tp{
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+  .proj{
+    margin-left: 5px;
+  }
+
+  .angular, .collaborations, .django, .flask, .javascript{
+    display: none;
+    z-index: 10000000000000000000000000;
+  }
+
+  #one, #two, #three, #four, #five{
+        padding: 1.5%;
+      }
+
+  .about, .contact{
+    margin-top: 10%;
+  }
+
+  .contacts img{
+  width: 3em;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 1.5em;
+}
+
+.contacts img:hover{
+  box-shadow: 5px 5px 5px grey;
+  width: 3.2em;
+  border-radius: 1.5em;
+}
+
+.contacts{
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5em;
+  text-align: center;
+}
+  h1, h2, .title, .h1{
+    font-family: 'Cinzel' , sans-serif;
+  }
+
+  
+
+  @media (max-width: 1199.98px) {
+    .sidenav {
+      display: none;
+    }
+
+    .about, .contact{
+      margin-top: 28%;
+    }
+
+      .topnav{
+        display: block;
+      }
+
+      .topnav>ul>li{
+        display: inline-block;
+        margin: 0.5%;
+        background-color: #17a2b8;
+        border-radius: 5%;
+        padding: 1.5%;
+      }
+      .tp{
+        margin-top: -40px;
+      }
+      .btm{
+        margin-top: 100px;
+      }
+     }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1C2331; } }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #1C2331; }

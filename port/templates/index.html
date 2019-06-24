@@ -1,0 +1,136 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+            <!--Section: Jumbotron-->
+            <section class="blue-gradient wow fadeIn" id="intro">
+
+                <!-- Content -->
+                <div class="text-white text-center py-5 px-5 my-2 container-fluid">
+
+                    <h1 class="mb-4">
+                        <strong>MAHMOUD HUSSEIN FUAAD</strong>
+                    </h1>
+                    <h3>
+                        <strong>Full-Stack Web Developer</strong>
+                    </h3>
+                    <p class="mb-4">
+                        <strong>You imagine, <span>I develop</span> </strong>
+                    </p>
+                    <a target="_blank" href="https://github.com/fuaad001" class="btn btn-outline-white btn-lg">Visit GitHub Profile
+                        <i class="fab fa-github ml-2"></i>
+                    </a>
+
+                </div>
+                <!-- Content -->
+            </section>
+            <!--Section: Jumbotron-->
+
+            <!--Section: Cards-->
+            <section class="pt-5">
+              <div class="container">
+
+                <!-- Heading & Description -->
+                <div class="wow fadeIn">
+                    <!--Section heading-->
+                    <h2 class="h1 text-center name">Who is Fuaad?</h2>
+                    <hr>
+                    <!--Section description-->
+                    <p class="text-center">A full-stack web developer from <span style="font-weight: bold">Mombasa, Kenya.</span> He obtained his education from <span style="font-weight: bold">Moringa School</span> and <span style="font-weight: bold">Andela</span>. He specializes in both interactive and business commercial websites.</p>
+                    <p class="text-center mb-5 pb-5">Proficient in the Languages:
+                        <strong>Python, JavaScript, TypeScript, HTML and CSS</strong> </p>
+                </div>
+                <!-- Heading & Description -->
+
+                <h2 class="h1 text-center">Recent Work</h2>
+                <hr>
+
+                <!--Grid row-->
+                {% if works %}
+                {% for work in works %}
+                {% if work.id < 4 %}
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-lg-5 col-xl-4 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1-half">
+                            <div class="view overlay">
+                                <div class="">
+                                    <img class="img-responsive" width="100%" src="{{work.image.url}}" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+                        <h3 class="mb-3 font-weight-bold dark-grey-text">
+                            <strong>{{work.title}}</strong>
+                        </h3>
+                        <p class="grey-text">{{work.description}}</p>
+                        <p>
+                            Technologies used: <strong>{{work.technologies}}</strong>
+                        </p>
+                        <a href="{{work.github}}" target="_blank" class="btn btn-primary btn-md">Visit GitHub Repository
+                            <i class="fab fa-github ml-2"></i>
+                        </a>
+                        <a href="{{work.live}}" target="_blank" class="btn btn-primary btn-md">Open Site
+                            <i class="fas fa-globe ml-2"></i>
+                        </a>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+
+                <hr class="mb-5">
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Cards-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+        <hr class="my-4">
+
+        <!-- Social icons -->
+        <div class="pb-4">
+            <a href="https://www.facebook.com/albarto.y.delrio" target="_blank">
+                <i class="fab fa-facebook-f mr-3"></i>
+            </a>
+
+            <a href="https://twitter.com/HusseinFuaad1" target="_blank">
+                <i class="fab fa-twitter mr-3"></i>
+            </a>
+
+            <a href="https://github.com/fuaad001" target="_blank">
+                <i class="fab fa-github mr-3"></i>
+            </a>
+
+            <a href="https://www.instagram.com/_.fuaad_/" target="_blank">
+                <i class="fab fa-instagram mr-3"></i>
+            </a>
+        </div>
+        <!-- Social icons -->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            Hussein Fuaad © 2019 Copyright:
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+{%endblock%}
